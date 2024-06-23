@@ -1,0 +1,1023 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /coords/:
+    get:
+      operationId: coords_list
+      tags:
+      - coords
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coord'
+          description: ''
+    post:
+      operationId: coords_create
+      tags:
+      - coords
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coord'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Coord'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Coord'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coord'
+          description: ''
+  /coords/{id}/:
+    get:
+      operationId: coords_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Coord.
+        required: true
+      tags:
+      - coords
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coord'
+          description: ''
+    put:
+      operationId: coords_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Coord.
+        required: true
+      tags:
+      - coords
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Coord'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Coord'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Coord'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coord'
+          description: ''
+    patch:
+      operationId: coords_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Coord.
+        required: true
+      tags:
+      - coords
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedCoord'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedCoord'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedCoord'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Coord'
+          description: ''
+    delete:
+      operationId: coords_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Coord.
+        required: true
+      tags:
+      - coords
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /images/:
+    get:
+      operationId: images_list
+      tags:
+      - images
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Image'
+          description: ''
+    post:
+      operationId: images_create
+      tags:
+      - images
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Image'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Image'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Image'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+          description: ''
+  /images/{id}/:
+    get:
+      operationId: images_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pictures.
+        required: true
+      tags:
+      - images
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+          description: ''
+    put:
+      operationId: images_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pictures.
+        required: true
+      tags:
+      - images
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Image'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Image'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Image'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+          description: ''
+    patch:
+      operationId: images_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pictures.
+        required: true
+      tags:
+      - images
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedImage'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedImage'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedImage'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Image'
+          description: ''
+    delete:
+      operationId: images_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this pictures.
+        required: true
+      tags:
+      - images
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /levels/:
+    get:
+      operationId: levels_list
+      tags:
+      - levels
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Level'
+          description: ''
+    post:
+      operationId: levels_create
+      tags:
+      - levels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Level'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Level'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Level'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+          description: ''
+  /levels/{id}/:
+    get:
+      operationId: levels_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this level.
+        required: true
+      tags:
+      - levels
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+          description: ''
+    put:
+      operationId: levels_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this level.
+        required: true
+      tags:
+      - levels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Level'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Level'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Level'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+          description: ''
+    patch:
+      operationId: levels_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this level.
+        required: true
+      tags:
+      - levels
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedLevel'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedLevel'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedLevel'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Level'
+          description: ''
+    delete:
+      operationId: levels_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this level.
+        required: true
+      tags:
+      - levels
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /mountain-pass/:
+    get:
+      operationId: mountain_pass_list
+      tags:
+      - mountain-pass
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MountainPass'
+          description: ''
+    post:
+      operationId: mountain_pass_create
+      tags:
+      - mountain-pass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MountainPass'
+          description: ''
+  /mountain-pass/{id}/:
+    get:
+      operationId: mountain_pass_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this MountainPass.
+        required: true
+      tags:
+      - mountain-pass
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MountainPass'
+          description: ''
+    put:
+      operationId: mountain_pass_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this MountainPass.
+        required: true
+      tags:
+      - mountain-pass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MountainPass'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MountainPass'
+          description: ''
+    patch:
+      operationId: mountain_pass_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this MountainPass.
+        required: true
+      tags:
+      - mountain-pass
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedMountainPass'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedMountainPass'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedMountainPass'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MountainPass'
+          description: ''
+    delete:
+      operationId: mountain_pass_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this MountainPass.
+        required: true
+      tags:
+      - mountain-pass
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /users/:
+    get:
+      operationId: users_list
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tourist'
+          description: ''
+    post:
+      operationId: users_create
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tourist'
+          description: ''
+  /users/{id}/:
+    get:
+      operationId: users_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Tourist.
+        required: true
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tourist'
+          description: ''
+    put:
+      operationId: users_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Tourist.
+        required: true
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Tourist'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tourist'
+          description: ''
+    patch:
+      operationId: users_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Tourist.
+        required: true
+      tags:
+      - users
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTourist'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTourist'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTourist'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tourist'
+          description: ''
+    delete:
+      operationId: users_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Tourist.
+        required: true
+      tags:
+      - users
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    AutumnLevEnum:
+      enum:
+      - 4A
+      - 2A
+      - 1A
+      - 3A
+      type: string
+      description: |-
+        * `4A` - winter
+        * `2A` - spring
+        * `1A` - summer
+        * `3A` - autumn
+    Coord:
+      type: object
+      properties:
+        latitude:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,8})?$
+        longitude:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,8})?$
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+      required:
+      - latitude
+      - longitude
+    Image:
+      type: object
+      properties:
+        image:
+          type: string
+          format: uri
+        title:
+          type: string
+          maxLength: 128
+      required:
+      - image
+      - title
+    Level:
+      type: object
+      properties:
+        winter_lev:
+          $ref: '#/components/schemas/WinterLevEnum'
+        spring_lev:
+          $ref: '#/components/schemas/SpringLevEnum'
+        summer_lev:
+          $ref: '#/components/schemas/SummerLevEnum'
+        autumn_lev:
+          $ref: '#/components/schemas/AutumnLevEnum'
+    MountainPass:
+      type: object
+      description: Adds nested create feature
+      properties:
+        beauty_title:
+          type: string
+          maxLength: 128
+        title:
+          type: string
+          maxLength: 128
+        other_titles:
+          type: string
+          maxLength: 128
+        connect:
+          type: string
+          maxLength: 128
+        add_time:
+          type: string
+          format: date-time
+          readOnly: true
+        tourist_id:
+          $ref: '#/components/schemas/Tourist'
+        coord_id:
+          $ref: '#/components/schemas/Coord'
+        level:
+          $ref: '#/components/schemas/Level'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Image'
+        status:
+          type: string
+          readOnly: true
+      required:
+      - add_time
+      - beauty_title
+      - connect
+      - coord_id
+      - images
+      - level
+      - other_titles
+      - status
+      - title
+      - tourist_id
+    PatchedCoord:
+      type: object
+      properties:
+        latitude:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,8})?$
+        longitude:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,8})?$
+        height:
+          type: integer
+          maximum: 2147483647
+          minimum: -2147483648
+    PatchedImage:
+      type: object
+      properties:
+        image:
+          type: string
+          format: uri
+        title:
+          type: string
+          maxLength: 128
+    PatchedLevel:
+      type: object
+      properties:
+        winter_lev:
+          $ref: '#/components/schemas/WinterLevEnum'
+        spring_lev:
+          $ref: '#/components/schemas/SpringLevEnum'
+        summer_lev:
+          $ref: '#/components/schemas/SummerLevEnum'
+        autumn_lev:
+          $ref: '#/components/schemas/AutumnLevEnum'
+    PatchedMountainPass:
+      type: object
+      description: Adds nested create feature
+      properties:
+        beauty_title:
+          type: string
+          maxLength: 128
+        title:
+          type: string
+          maxLength: 128
+        other_titles:
+          type: string
+          maxLength: 128
+        connect:
+          type: string
+          maxLength: 128
+        add_time:
+          type: string
+          format: date-time
+          readOnly: true
+        tourist_id:
+          $ref: '#/components/schemas/Tourist'
+        coord_id:
+          $ref: '#/components/schemas/Coord'
+        level:
+          $ref: '#/components/schemas/Level'
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Image'
+        status:
+          type: string
+          readOnly: true
+    PatchedTourist:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 128
+        last_name:
+          type: string
+          maxLength: 128
+        first_name:
+          type: string
+          maxLength: 128
+        middle_name:
+          type: string
+          maxLength: 128
+        phone:
+          type: string
+          maxLength: 128
+    SpringLevEnum:
+      enum:
+      - 4A
+      - 2A
+      - 1A
+      - 3A
+      type: string
+      description: |-
+        * `4A` - winter
+        * `2A` - spring
+        * `1A` - summer
+        * `3A` - autumn
+    SummerLevEnum:
+      enum:
+      - 4A
+      - 2A
+      - 1A
+      - 3A
+      type: string
+      description: |-
+        * `4A` - winter
+        * `2A` - spring
+        * `1A` - summer
+        * `3A` - autumn
+    Tourist:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          maxLength: 128
+        last_name:
+          type: string
+          maxLength: 128
+        first_name:
+          type: string
+          maxLength: 128
+        middle_name:
+          type: string
+          maxLength: 128
+        phone:
+          type: string
+          maxLength: 128
+      required:
+      - email
+      - first_name
+      - last_name
+      - middle_name
+    WinterLevEnum:
+      enum:
+      - 4A
+      - 2A
+      - 1A
+      - 3A
+      type: string
+      description: |-
+        * `4A` - winter
+        * `2A` - spring
+        * `1A` - summer
+        * `3A` - autumn
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

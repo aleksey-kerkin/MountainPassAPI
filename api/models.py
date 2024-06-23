@@ -93,10 +93,6 @@ class Level(models.Model):
 
 
 class Image(models.Model):
-    # # Переход к изображению по ссылке
-    # image = models.ImageField(upload_to='static/images')
-
-    # Для функции: сохранить фото в файл media через админ панель
     image = models.ImageField(
         upload_to=get_path_upload_photos, verbose_name="picture", blank=True, null=True
     )
@@ -105,11 +101,6 @@ class Image(models.Model):
         "MountainPass", on_delete=models.CASCADE, related_name="images"
     )
 
-    # # Переход к изображению по ссылке
-    # def __str__(self):
-    #     return self.title
-
-    # Для функции: сохранить фото в файл media через админ панель
     def __str__(self):
         return f"{self.pk}: {self.title}"
 
