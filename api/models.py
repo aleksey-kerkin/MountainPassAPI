@@ -18,25 +18,6 @@ class Tourist(models.Model):
         verbose_name_plural = "Tourists"
 
 
-class MountainPassAdded(models.Model):
-    STATUS_CHOICES = (
-        ("new", "новый"),
-        ("pending", "в работе"),
-        ("accepted", "принято"),
-        ("rejected", "отклонено"),
-    )
-
-    beauty_title = models.CharField(max_length=255)
-    title = models.CharField(max_length=255)
-    other_titles = models.CharField(max_length=255)
-    connect = models.CharField(max_length=255)
-    add_time = models.DateTimeField(auto_now_add=True)
-    coord_id = models.OneToOneField("Coord", on_delete=models.CASCADE)
-    tourist_id = models.ForeignKey("Tourist", on_delete=models.CASCADE)
-    status = models.CharField(max_length=8, choices=STATUS_CHOICES, default="new")
-    level = models.ForeignKey("Level", on_delete=models.CASCADE)
-
-
 class MountainPass(models.Model):
     NEW = "NW"
     PENDING = "PN"
@@ -105,5 +86,5 @@ class Image(models.Model):
         return f"{self.pk}: {self.title}"
 
     class Meta:
-        verbose_name = "pictures"
-        verbose_name_plural = "pictures"
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
