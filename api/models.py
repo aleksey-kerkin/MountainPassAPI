@@ -86,5 +86,5 @@ class Image(models.Model):
         return f"{self.pk}: {self.title}"
 
     class Meta:
-        verbose_name = "pictures"
-        verbose_name_plural = "pictures"
+        verbose_name = "Image"
+        verbose_name_plural = "Images"
