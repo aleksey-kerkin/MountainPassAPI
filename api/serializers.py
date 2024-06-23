@@ -80,16 +80,18 @@ class MountainPassSerializer(WritableNestedModelSerializer):
         if self.instance is not None:
             instance_tourist_id = self.instance.tourist_id
             data_tourist_id = data.get("tourist_id")
-            validating_tourist_id_fields = [
-                instance_tourist_id.last_name != data_tourist_id["last_name"],
-                instance_tourist_id.first_name != data_tourist_id["first_name"],
-                instance_tourist_id.patronymic != data_tourist_id["middle_name"],
-                instance_tourist_id.phone != data_tourist_id["phone"],
-                instance_tourist_id.email != data_tourist_id["email"],
-            ]
 
-            if data_tourist_id is not None and any(validating_tourist_id_fields):
-                raise serializers.ValidationError(
-                    {"Отклонено": "Нельзя изменять данные пользователя"}
-                )
+            if data_tourist_id is not None:
+                validating_tourist_id_fields = [
+                    instance_tourist_id.last_name != data_tourist_id["last_name"],
+                    instance_tourist_id.first_name != data_tourist_id["first_name"],
+                    instance_tourist_id.patronymic != data_tourist_id["middle_name"],
+                    instance_tourist_id.phone != data_tourist_id["phone"],
+                    instance_tourist_id.email != data_tourist_id["email"],
+                ]
+
+                if any(validating_tourist_id_fields):
+                    raise serializers.ValidationError(
+                        {"Отклонено": "Нельзя изменять данные пользователя"}
+                    )
         return data
