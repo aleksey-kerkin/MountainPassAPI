@@ -18,7 +18,7 @@ class Tourist(models.Model):
         verbose_name_plural = "Tourists"
 
 
-class PerevalAdded(models.Model):
+class MountainPassAdded(models.Model):
     STATUS_CHOICES = (
         ("new", "новый"),
         ("pending", "в работе"),
