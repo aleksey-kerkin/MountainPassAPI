@@ -85,7 +85,7 @@ class MountainPassSerializer(WritableNestedModelSerializer):
                 validating_tourist_id_fields = [
                     instance_tourist_id.last_name != data_tourist_id["last_name"],
                     instance_tourist_id.first_name != data_tourist_id["first_name"],
-                    instance_tourist_id.patronymic != data_tourist_id["middle_name"],
+                    instance_tourist_id.middle_name != data_tourist_id["middle_name"],
                     instance_tourist_id.phone != data_tourist_id["phone"],
                     instance_tourist_id.email != data_tourist_id["email"],
                 ]
