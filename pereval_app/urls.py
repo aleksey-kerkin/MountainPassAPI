@@ -3,9 +3,9 @@ from django.urls import include, path
 from rest_framework import routers
 from api.views import (
     TouristViewset,
-    CoordViewset,
-    LevelViewset,
-    ImageViewset,
+    # CoordViewset,
+    # LevelViewset,
+    # ImageViewset,
     MountainPassViewset,
 )
 from drf_spectacular.views import (
@@ -17,11 +17,11 @@ from drf_spectacular.views import (
 
 router = routers.DefaultRouter()
 router.register(r"tourists", TouristViewset, basename="tourists")
-router.register(r"coords", CoordViewset, basename="coords")
-router.register(r"levels", LevelViewset, basename="levels")
-router.register(r"images", ImageViewset, basename="images")
-router.register(r"mountain-pass", MountainPassViewset, basename="mountain-pass")
-router.register(r"mountain-pass", MountainPassViewset, basename="mountain-pass-list")
+# router.register(r"coords", CoordViewset, basename="coords")
+# router.register(r"levels", LevelViewset, basename="levels")
+# router.register(r"images", ImageViewset, basename="images")
+router.register(r"submitData", MountainPassViewset, basename="mountain-pass")
+router.register(r"submitData", MountainPassViewset, basename="mountain-pass-list")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
