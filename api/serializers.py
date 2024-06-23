@@ -56,15 +56,15 @@ class MountainPassSerializer(WritableNestedModelSerializer):
         ]
 
     def create(self, validated_data, **kwargs):
-        tourist_id = validated_data.pop("tourist_id")
-        coord_id = validated_data.pop("coord_id")
-        level = validated_data.pop("level")
+        tourist_data = validated_data.pop("tourist_id")
+        coord_data = validated_data.pop("coord_id")
+        level_data = validated_data.pop("level")
         images = validated_data.pop("images")
 
-        tourist_id, created = Tourist.objects.get_or_create(**tourist_id)
+        tourist_id, created = Tourist.objects.get_or_create(**tourist_data)
 
-        coord_id = Coord.objects.create(**coord_id)
-        level = Level.objects.create(**level)
+        coord_id = Coord.objects.create(**coord_data)
+        level = Level.objects.create(**level_data)
         mountain_pass = MountainPass.objects.create(
             **validated_data, tourist_id=tourist_id, coord_id=coord_id, level=level
         )
