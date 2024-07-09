@@ -163,7 +163,7 @@ message: сообщение о причине неудачного обновл�
 
 https://mountainpass-aleksey-kerkin.amvera.io/
 
-### Документация сгенерирована с помощью пакета drf-yasg
+### Документация сгенерирована с помощью пакета drf-spectacular
 
 Документация swagger: https://mountainpass-aleksey-kerkin.amvera.io/api/schema/swagger-ui/
 
