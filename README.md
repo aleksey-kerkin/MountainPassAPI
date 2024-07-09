@@ -112,7 +112,6 @@ POST/submitData/
         "other_titles": "title_3",
         "connect": "-", //соеденитель текстового поля
         "tourist_id": {
-           
             "email": "ivanov@gmail.ru",
             "last_name": "Иванов",
             "first_name": "Иван",
@@ -120,19 +119,20 @@ POST/submitData/
             "phone": "+7(999)9999999"
         },
         "coord_id": {
-            
             "latitude": 54.87690019,
             "longitude": 43.36759009,
             "height": 1244
         },
         "level": {
-           
             "winter_lev": "4A",
             "spring_lev": "2A",
             "summer_lev": "1A",
             "autumn_lev": "3A"
         },
-        "images": [{"image":"<картинка1|ссылка1>", "title":"Гора1"}, {"image":"<картинка2|ссылка2>", "title":"Подъём2"}]
+        "images": [
+        {"image":"<картинка1|ссылка1>", "title":"Гора1"},
+        {"image":"<картинка2|ссылка2>", "title":"Подъём2"}
+        ]
     }
 
 Результат метода: JSON
