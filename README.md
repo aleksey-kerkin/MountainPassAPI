@@ -132,7 +132,7 @@ POST/submitData/
             "summer_lev": "1A",
             "autumn_lev": "3A"
         },
-        "images": [{data:"<картинка1>", title:"Гора1"}, {data:"<картинка>", title:"Подъём2"}]
+        "images": [{"image":"<картинка1|ссылка1>", "title":"Гора1"}, {"image":"<картинка2|ссылка2>", "title":"Подъём2"}]
     }
 
 Результат метода: JSON
