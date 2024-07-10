@@ -110,7 +110,7 @@ POST/submitData/
         "beauty_title": "title_1",
         "title": "title_2",
         "other_titles": "title_3",
-        "connect": "-", //соеденитель текстового поля
+        "connect": "connects mnt1 and mnt2", 
         "tourist_id": {
             "email": "ivanov@gmail.ru",
             "last_name": "Иванов",
